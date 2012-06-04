@@ -1,0 +1,11 @@
+- if (everyauth.twitter)
+  - var cu = everyauth.twitter.user
+    a.current-user(href="https://www.twitter.com/#{cu.screen_name}", style="background-image: url( http://api.twitter.com/1/users/profile_image?screen_name=#{cu.screen_name}&size=mini)") #{cu.screen_name}
+    - if (cu.status)
+      .current-status
+        .popover.below
+          .arrow
+            .inner
+              h3.title Current Status
+                .content
+                  p=cu.status.text

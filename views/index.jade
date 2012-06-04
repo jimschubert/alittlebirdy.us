@@ -1,0 +1,49 @@
+- if (!everyauth.loggedIn)
+  .alert-message.success 
+      a.close(href="#") x
+      p Welcome! All you need to do now is login!
+
+.hero-unit
+    h1 alittlebirdy.us
+    p 
+      | alittlebirdy.us is a Twitter list management application built with bootstrap and node.js
+    p
+      | <a class="links" href="http://twitter.github.com/bootstrap/" target="_blank">bootstrap</a> 
+      | is a CSS and HTML framework for creating web applications quickly.
+    p
+      | <a class="links" href="http://nodejs.org" target="_blank">node.js</a>
+      | is evented IO on top of Google's V8 JavaScript engine.
+
+h1 Features
+    small Why you want this
+p alittlebirdy.us was created to make managing your twitter lists a little easier.  
+p Have you ever tried adding more than one of your favorite celebrities to a <strong>Famous People</strong> list?  I have. It's a pain. 
+p
+  em Not anymore.
+.row
+    .span6
+        h3 What it offers
+        ul
+            li Create Lists
+            li Edit Lists
+            li Drag &amp; drop interface
+            li 'Buckets' of twitter accounts
+            li Add/Update list members
+            li Security- No data is stored on the server!
+    .span6
+        h3 What it doesn't
+        ul
+            li List deletion
+            li Post statuses
+            li Message users
+            li Direct Messages
+    .span4
+        h3 What's behind it?
+        ul
+            li: abbr(title="Twitter provides the data") twitter
+            li: abbr(title="The server code runs on node.js") node.js
+            li: abbr(title="The presentation uses Bootstrap by twitter") bootstrap
+            li: abbr(title="The authentication is done by everyauth") everyauth
+            li: abbr(title="A wrapper around the Twitter API calls") tweeter.js
+            li: abbr(title="The guy who threw it all together") jimschubert
+

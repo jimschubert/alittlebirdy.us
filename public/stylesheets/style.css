@@ -1,0 +1,136 @@
+body {
+  padding: 0 50px 10px 50px;
+  font: 14px Helvetica, Arial, sans-serif;
+  margin-top: 50px;
+}
+
+abbr { cursor: help; }
+
+a {
+  color: #00B7FF;
+}
+
+a.current-user {
+  padding-left: 32px !important;
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+a.links { 
+margin: 0 2px !important;
+padding: 1px;
+}
+
+h1 small { margin-left: 15px }
+
+.current-status {
+    position:absolute;
+    display:none;
+}
+
+.current-status .popover {
+    display:block;
+}
+
+.current-status h3 { 
+    padding:2px;
+    font-size:16px;
+}
+
+.current-status .inner {
+    margin-left: -140px;
+}
+
+.current-status .content {
+    font-size:11px;
+}
+
+.hero-unit {
+    margin-top:2px;
+    padding:45px;
+}
+
+.hero-unit p {
+  width:100%;
+  color: white;
+  text-shadow: rgba(0,0,0,0.6) 1px 2px 2px;
+  letter-spacing:normal;
+  margin:1px;
+}
+
+.btn.primary.small {
+margin-right:12px;
+}
+
+li.list {
+background-color:#EFEFDD;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+padding:3px;
+margin:2px 0;
+}
+
+li.list:hover {
+  background-color:rgba(0,0,0,0.15);
+}
+
+li.list.selected {
+  background-color:rgba(0,0,0,0.3);
+}
+
+#list-members { 
+  background-color:#ececec;
+  clear:float;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  border:1px solid #EFEFDD;
+  padding:7px;
+}
+
+.list-member {
+  height:48px;
+  width:48px;
+  float:left;
+  margin:5px;
+}
+
+.list-member img {
+  height:48px;
+  width:48px;
+}
+
+.list-member a span.twipsy { 
+  display:none; 
+  position:relative;
+  top:0;
+  left:-10px;
+}
+.list-member a:hover span.twipsy { display:block; }
+
+#remove {
+  margin-left: 10px;
+  width:80px;
+  min-height:200px;
+  background: url(/images/user-trash.png) no-repeat;
+}
+
+#remove.remove-ready {
+background: url(/images/user-available.png) no-repeat;
+}
+
+#remove.remove-drop {
+  background:url(/images/user-offline.png) no-repeat;
+}
+
+li.list.add-to-list-ready {
+  background: rgba(0,0,0,0.15);
+}
+
+li.list.add-to-list-drop {
+  background: rgba(0,150,0,0.3);
+  position: relative;
+  left:-10px;
+}

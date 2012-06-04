@@ -1,0 +1,54 @@
+!!! 5
+html(lang="en")
+  head
+    title alittlebirdy.us
+    //if lt IE 9
+      script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js")
+    script(src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js")
+    link(rel="stylesheet", href="/stylesheets/bootstrap-1.1.1.css")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js")
+    script(src="/javascripts/main.js")
+    script#error-template(type="x-jquery-template")
+      .alert-message.error
+        a.close(href="#") x
+        p ${error}
+    script#success-template(type="x-jquery-template")
+      .alert-message.success
+        a.close(href="#") x
+        p ${message}
+
+  body
+    .topbar
+      .fill
+        .container
+          h3
+            a(href="/") alittlebirdy.us
+          ul.secondary-nav
+            - if (!everyauth.loggedIn )
+              li
+                a(href="/auth/twitter") Login
+            - else
+              li
+                include current_user
+              li.dropdown
+                a.dropdown-toggle(href="#", style="font-size:.8em") &#9660;
+                ul.dropdown-menu
+                  li: a(href="/manage") Manage
+                  li: a(href="/logout") Logout
+
+    .container
+      - if ('undefined' !== typeof errors && errors.length)
+        - each error in errors
+          .alert-message.error
+            a.close(href="#") x
+            p= error
+
+      #content!=body
+
+    footer.container
+      .row
+        .span11 &copy; Jim Schubert, 2011
+        .span5 Twitter is a trademark of Twitter, Inc.
+

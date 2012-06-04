@@ -1,0 +1,48 @@
+.page-header
+  h1 List Manager
+
+#user-lists.row  
+  .span4.column    
+    - if (lists) {
+      ul.unstyled
+        - each item in lists
+          li.list(style="color:#646464")=item.name
+            input.id(type="hidden",value="#{item.id_str}")
+            input.slug(type="hidden",value="#{item.slug}")
+    - } else
+      p You don't appear to have any lists...
+  
+  #list-members.span10.column
+    .members Here's where your members will go!
+
+  #remove.span1.column
+    .trash 
+
+#helpers.page-header.row(style="margin-bottom:10px")
+  
+  .span11 
+    p Drag from the bucket below to add to lists!
+  
+  .span5
+    form(action='/search',style="margin-bottom:8px")
+      input(type="text",placeholder="Search")
+
+#bucket.row
+  .span11.members Here's the bucket!
+
+script#list-member(type="text/x-jquery-tmpl")
+  .list-member(style="background-color:#${profile_sidebar_fill_color}")
+    a(href="http://www.twitter.com/${screen_name}") 
+      img(src="${profile_image_url}")
+      span.twipsy.below
+        span.twipsy-arrow
+        span.twipsy-inner ${screen_name}
+    input(type="hidden", val="${id_str}")
+  
+script(type="text/javascript")
+  $(function() {
+    var height = $('#user-lists').height();
+    $('.column').height( height > 450 ? 450 : height );
+  });
+
+script(type="text/javascript", src="/javascripts/manage.js")
